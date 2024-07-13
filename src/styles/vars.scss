@@ -1,0 +1,21 @@
+:root,
+*::backdrop {
+  --c-dark: 200deg, 15%, 15%;
+  --c-light: 0, 0%, 95%;
+  --c-bg: var(--c-dark);
+  --c-txt: var(--c-light);
+  --c-accent: 22, 100%, 50%;
+
+  --b-rs: 0.5rem;
+
+  --sb-c-bg: var(--c-bg);
+  --sb-c-tb: var(--c-accent);
+  --sb-size: 0.5rem;
+}
+@media (prefers-color-scheme: light) {
+  :root,
+  *::backdrop {
+    --c-bg: var(--c-light);
+    --c-txt: 0, 0, 15%;
+  }
+}

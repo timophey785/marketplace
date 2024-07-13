@@ -1,0 +1,29 @@
+{
+  "name": "astro-template",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/svelte": "^5.0.3",
+    "@castlenine/svelte-qrcode": "^1.1.0",
+    "@iconify/svelte": "^3.1.6",
+    "@rgossiaux/svelte-headlessui": "^2.0.0",
+    "astro": "^4.3.2",
+    "axios": "^1.6.7",
+    "localforage": "^1.10.0",
+    "marked": "^12.0.0",
+    "nanostores": "^0.9.5",
+    "sass": "^1.70.0",
+    "svelte": "^4.2.9",
+    "svelte-paginate": "^0.1.0",
+    "swiper": "^11.0.5",
+    "typescript": "^5.3.3"
+  }
+}

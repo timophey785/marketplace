@@ -1,0 +1,42 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { HeadProps } from './Head.astro';
+import '../styles/main.scss';
+import Head from './Head.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Aside from './Aside.astro';
+
+interface Props extends Omit<HTMLAttributes<'html'>, 'title'>, HeadProps {
+  favicon?: string;
+  hasHeader?: boolean;
+  hasFooter?: boolean;
+  hasAside?: boolean;
+}
+
+const {
+  class: className,
+  lang = 'ru',
+  hasHeader = true,
+  hasFooter = true,
+  hasAside = false,
+  favicon = '',
+  ...props
+} = Astro.props;
+---
+
+<html class:list={['html', className]} {lang} {...props}>
+  <Head {favicon}>
+    <slot name="seo" />
+  </Head>
+  <body>
+    <slot name="before-header" />
+    {hasHeader && <Header />}
+    <slot name="after-header" />
+    {hasAside && <Aside />}
+    <slot />
+    <slot name="before-footer" />
+    {hasFooter && <Footer />}
+    <slot name="after-footer" />
+  </body>
+</html>

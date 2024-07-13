@@ -1,0 +1,44 @@
+---
+import BasicLayout from '../layouts/BasicLayout.astro';
+import SEO from '../layouts/SEO.astro';
+import logo from '../assets/svg/astro-logo.svg';
+import { Image } from 'astro:assets';
+---
+
+<BasicLayout>
+  <SEO
+    slot="seo"
+    title="Home"
+    description="This configurated Astro JS template"
+    imageUrls={{ fb: '' }}
+  />
+  <main>
+    <Image class="logo" src={logo} alt={'Astro logo'} />
+    <h1><span>A</span>stro template</h1>
+  </main>
+</BasicLayout>
+
+<style lang="scss" is:global>
+  body {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+  }
+</style>
+
+<style>
+  h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    line-height: 1;
+    span {
+      display: inline-block;
+      background-color: hsla(var(--c-accent), 20%);
+      border-bottom: thin solid hsla(var(--c-accent));
+    }
+  }
+  .logo {
+    max-width: 35rem;
+  }
+</style>
